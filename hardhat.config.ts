@@ -365,6 +365,7 @@ export default {
       {
         network: "neonlabs",
         chainId: 245022934,
+    
         urls: {
           apiURL: "https://shadow-mainnet-api.neonscan.org/hardhat/verify",
           browserURL: "https://shadow.neonscan.org"
