@@ -6,7 +6,7 @@ export type ComposableStablePoolDeployment = {
   FactoryVersion: string;
   PoolVersion: string;
   WETH: string;
-  USDC: string;
+  BAL: string;
 };
 
 const Vault = new Task('20210418-vault', TaskMode.READ_ONLY);
@@ -20,7 +20,7 @@ export default {
   Vault,
   ProtocolFeePercentagesProvider,
   WETH,
-  USDC,
+  BAL: USDC,
   FactoryVersion: JSON.stringify({ name: 'ComposableStablePoolFactory', ...BaseVersion }),
   PoolVersion: JSON.stringify({ name: 'ComposableStablePool', ...BaseVersion }),
 };

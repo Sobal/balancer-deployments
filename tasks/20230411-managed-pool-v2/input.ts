@@ -9,7 +9,7 @@ export type ManagedPoolDeployment = {
   InitialPauseWindowDuration: number;
   BufferPeriodDuration: number;
   WETH: string;
-  USDC: string;
+  BAL: string;
 };
 
 const Vault = new Task('20210418-vault', TaskMode.READ_ONLY);
@@ -29,5 +29,5 @@ export default {
   InitialPauseWindowDuration: extendedPauseWindowDuration,
   BufferPeriodDuration: MONTH,
   WETH,
-  USDC,
+  BAL: USDC,
 };

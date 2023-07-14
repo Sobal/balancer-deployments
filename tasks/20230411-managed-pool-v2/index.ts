@@ -3,7 +3,7 @@ import { getContractDeploymentTransactionHash, saveContractDeploymentTransaction
 import { Task, TaskMode, TaskRunOptions } from '@src';
 import { ManagedPoolDeployment } from './input';
 import * as expectEvent from '@helpers/expectEvent';
-import { bn, fp } from '@helpers/numbers';
+import { BigNumber, bn, fp } from '@helpers/numbers';
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '@helpers/constants';
 
 export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise<void> => {
@@ -44,7 +44,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
     };
 
     const newManagedPoolSettings = {
-      tokens: [input.WETH, input.USDC].sort(function (a, b) {
+      tokens: [input.WETH, input.BAL].sort(function (a, b) {
         return a.toLowerCase().localeCompare(b.toLowerCase());
       }),
       normalizedWeights: [fp(0.8), fp(0.2)],

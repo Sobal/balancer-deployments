@@ -6,6 +6,7 @@ import { bn } from '@helpers/numbers';
 import * as expectEvent from '@helpers/expectEvent';
 import { getContractDeploymentTransactionHash, saveContractDeploymentTransactionHash } from '@src';
 import { ethers } from 'hardhat';
+import { sleep } from '@helpers/sleep';
 
 export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise<void> => {
   const input = task.input() as ComposableStablePoolDeployment;
@@ -13,6 +14,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
   const args = [input.Vault, input.ProtocolFeePercentagesProvider, input.FactoryVersion, input.PoolVersion];
   const factory = await task.deployAndVerify('ComposableStablePoolFactory', args, from, force);
 
+  sleep(30000)
   if (task.mode === TaskMode.LIVE) {
     // We also create a Pool using the factory and verify it, to let us compute their action IDs and so that future
     // Pools are automatically verified. We however don't run any of this code in CHECK mode, since we don't care about
@@ -26,7 +28,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
       protocolFeeProvider: input.ProtocolFeePercentagesProvider,
       name: 'DO NOT USE - Mock Composable Stable Pool',
       symbol: 'TEST',
-      tokens: [input.WETH, input.USDC].sort(function (a, b) {
+      tokens: [input.WETH, input.BAL].sort(function (a, b) {
         return a.toLowerCase().localeCompare(b.toLowerCase());
       }),
       rateProviders: [ZERO_ADDRESS, ZERO_ADDRESS],
