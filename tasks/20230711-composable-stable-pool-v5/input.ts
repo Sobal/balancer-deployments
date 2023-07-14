@@ -6,7 +6,7 @@ export type ComposableStablePoolDeployment = {
   FactoryVersion: string;
   PoolVersion: string;
   WETH: string;
-  BAL: string;
+  USDC: string;
 };
 
 const Vault = new Task('20210418-vault', TaskMode.READ_ONLY);

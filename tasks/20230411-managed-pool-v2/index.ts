@@ -44,7 +44,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
     };
 
     const newManagedPoolSettings = {
-      tokens: [input.WETH, input.BAL].sort(function (a, b) {
+      tokens: [input.WETH, input.USDC].sort(function (a, b) {
         return a.toLowerCase().localeCompare(b.toLowerCase());
       }),
       normalizedWeights: [fp(0.8), fp(0.2)],
