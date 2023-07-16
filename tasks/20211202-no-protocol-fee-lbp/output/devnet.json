@@ -1,3 +1,4 @@
 {
-  "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x17be1E071fF458708A1C7ee1f1Ff5Ab5830A64F9"
+  "NoProtocolFeeLiquidityBootstrappingPoolFactory": "0x3d9246C38c9e8A22D1f4d2742e28CEd721897647",
+  "MockLiquidityBootstrappingPool": "0x1B6BCDFdC92DF2E218B0c4f24CCBe7378f24276B"
 }
