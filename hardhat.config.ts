@@ -302,17 +302,14 @@ task(
 task(TASK_TEST).addOptionalParam('id', 'Specific task ID of the fork test to run.').setAction(test);
 
 const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY || '';
-const ADMIN_PRIVATE_KEY = process.env.ADMIN_PRIVATE_KEY || '';
-
 
 export default {
   networks: {
     neonlabs: {
       chainId: 245022934,
-      url: 'https://shadow-mainnet.neonevm.org/',
+      url: 'https://neon-proxy-mainnet.solana.p2p.org/',
       accounts: [
         DEPLOYER_PRIVATE_KEY,
-        ADMIN_PRIVATE_KEY,
       ],
       saveDeployments: true
     },
@@ -321,7 +318,6 @@ export default {
       url: 'https://devnet.neonevm.org/',
       accounts: [
         DEPLOYER_PRIVATE_KEY,
-        ADMIN_PRIVATE_KEY,
       ],
       saveDeployments: true
     },
@@ -365,10 +361,9 @@ export default {
       {
         network: "neonlabs",
         chainId: 245022934,
-    
         urls: {
-          apiURL: "https://shadow-mainnet-api.neonscan.org/hardhat/verify",
-          browserURL: "https://shadow.neonscan.org"
+          apiURL: "https://api.neonscan.org/hardhat/verify",
+          browserURL: "https://neonscan.org"
         }
       },
       {
