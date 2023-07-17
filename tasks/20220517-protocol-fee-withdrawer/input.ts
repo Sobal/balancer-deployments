@@ -47,4 +47,7 @@ export default {
   devnet: {
     InitialDeniedTokens: [],
   },
+  neonlabs: {
+    InitialDeniedTokens: [],
+  },
 };

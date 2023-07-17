@@ -13,7 +13,7 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
 
   const args = [input.Vault, input.ProtocolFeePercentagesProvider, input.FactoryVersion, input.PoolVersion];
   const factory = await task.deployAndVerify('WeightedPoolFactory', args, from, force);
-  
+
   sleep(30000)
   if (task.mode === TaskMode.LIVE) {
     // We also create a Pool using the factory and verify it, to let us compute their action IDs and so that future
@@ -85,8 +85,8 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
       mockPoolArgs.params,
       mockPoolArgs.vault,
       mockPoolArgs.protocolFeeProvider,
-      mockPoolArgs.pauseWindowDuration,
-      mockPoolArgs.bufferPeriodDuration,
+      0,
+      0,
       mockPoolArgs.owner,
       mockPoolArgs.version,
     ]);
