@@ -20,7 +20,7 @@ export default {
   Vault,
   ProtocolFeePercentagesProvider,
   WETH,
-  USDC,
+  BAL: USDC,
   FactoryVersion: JSON.stringify({ name: 'ComposableStablePoolFactory', ...BaseVersion }),
   PoolVersion: JSON.stringify({ name: 'ComposableStablePool', ...BaseVersion }),
 };

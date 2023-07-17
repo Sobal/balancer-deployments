@@ -44,4 +44,7 @@ export default {
   sepolia: {
     InitialDeniedTokens: [],
   },
+  devnet: {
+    InitialDeniedTokens: [],
+  },
 };

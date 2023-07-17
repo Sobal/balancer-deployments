@@ -8,10 +8,10 @@ export type NoProtocolFeeLiquidityBootstrappingPoolDeployment = {
 
 const Vault = new Task('20210418-vault', TaskMode.READ_ONLY);
 const WETH = new Task('00000000-tokens', TaskMode.READ_ONLY);
-const BAL = new Task('00000000-tokens', TaskMode.READ_ONLY);
+const USDC = new Task('00000000-tokens', TaskMode.READ_ONLY);
 
 export default {
   Vault,
   WETH,
-  BAL,
+  BAL: USDC,
 };

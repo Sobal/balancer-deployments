@@ -6,13 +6,15 @@ import * as expectEvent from '@helpers/expectEvent';
 import { getContractDeploymentTransactionHash, saveContractDeploymentTransactionHash } from '@src';
 import { Task, TaskMode, TaskRunOptions } from '@src';
 import { WeightedPoolDeployment } from './input';
+import { sleep } from '@helpers/sleep';
 
 export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise<void> => {
   const input = task.input() as WeightedPoolDeployment;
 
   const args = [input.Vault, input.ProtocolFeePercentagesProvider, input.FactoryVersion, input.PoolVersion];
   const factory = await task.deployAndVerify('WeightedPoolFactory', args, from, force);
-
+  
+  sleep(30000)
   if (task.mode === TaskMode.LIVE) {
     // We also create a Pool using the factory and verify it, to let us compute their action IDs and so that future
     // Pools are automatically verified. We however don't run any of this code in CHECK mode, since we don't care about
@@ -43,18 +45,17 @@ export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise
 
     // This mimics the logic inside task.deploy
     if (force || !task.output({ ensure: false })['MockWeightedPool']) {
-      const poolCreationReceipt = await (
-        await factory.create(
-          mockPoolArgs.params.name,
-          mockPoolArgs.params.symbol,
-          mockPoolArgs.params.tokens,
-          mockPoolArgs.params.normalizedWeights,
-          mockPoolArgs.params.rateProviders,
-          mockPoolArgs.params.swapFeePercentage,
-          mockPoolArgs.owner,
-          ZERO_BYTES32
-        )
-      ).wait();
+      const tx = await factory.create(
+        mockPoolArgs.params.name,
+        mockPoolArgs.params.symbol,
+        mockPoolArgs.params.tokens,
+        mockPoolArgs.params.normalizedWeights,
+        mockPoolArgs.params.rateProviders,
+        mockPoolArgs.params.swapFeePercentage,
+        mockPoolArgs.owner,
+        ZERO_BYTES32
+      )
+      const poolCreationReceipt = await (tx).wait();
       const event = expectEvent.inReceipt(poolCreationReceipt, 'PoolCreated');
       const mockPoolAddress = event.args.pool;
 

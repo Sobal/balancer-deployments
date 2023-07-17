@@ -3,7 +3,7 @@ import { getContractDeploymentTransactionHash, saveContractDeploymentTransaction
 import { Task, TaskMode, TaskRunOptions } from '@src';
 import { ManagedPoolDeployment } from './input';
 import * as expectEvent from '@helpers/expectEvent';
-import { bn, fp } from '@helpers/numbers';
+import { BigNumber, bn, fp } from '@helpers/numbers';
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '@helpers/constants';
 
 export default async (task: Task, { force, from }: TaskRunOptions = {}): Promise<void> => {
