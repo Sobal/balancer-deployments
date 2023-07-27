@@ -302,9 +302,16 @@ task(
 task(TASK_TEST).addOptionalParam('id', 'Specific task ID of the fork test to run.').setAction(test);
 
 const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY || '';
+const RPC_URL = process.env.RPC_URL || '';
 
 export default {
   networks: {
+    goerli: {
+      url: RPC_URL,
+      accounts: [
+        DEPLOYER_PRIVATE_KEY
+      ]
+    },
     neonlabs: {
       chainId: 245022934,
       url: 'https://neon-proxy-mainnet.solana.p2p.org/',
@@ -320,7 +327,7 @@ export default {
         DEPLOYER_PRIVATE_KEY,
       ],
       saveDeployments: true
-    },
+    }
   },
   mocha: {
     timeout: 600000,
