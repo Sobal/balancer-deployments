@@ -16,10 +16,6 @@ export default {
     wstETH: '0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0',
     BalancerMinter,
   },
-  goerli: {
-    wstETH: '0x6320cD32aA674d2898A68ec82e869385Fc5f7E2f',
-    BalancerMinter,
-  },
   sepolia: {
     wstETH: '0x0000000000000000000000000000000000000000',
     BalancerMinter,
@@ -57,6 +53,10 @@ export default {
     BalancerMinter: '0x0000000000000000000000000000000000000000',
   },
   devnet: {
+    wstETH: '0x0000000000000000000000000000000000000000',
+    BalancerMinter: '0x0000000000000000000000000000000000000000',
+  },
+  goerli: {
     wstETH: '0x0000000000000000000000000000000000000000',
     BalancerMinter: '0x0000000000000000000000000000000000000000',
   }
