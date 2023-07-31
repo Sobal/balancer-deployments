@@ -327,6 +327,22 @@ export default {
         DEPLOYER_PRIVATE_KEY,
       ],
       saveDeployments: true
+    },
+    basetestnet: {
+      chainId: 84531,
+      url: 'https://goerli.base.org',
+      accounts: [
+        DEPLOYER_PRIVATE_KEY,
+      ],
+      saveDeployments: true
+    },
+    base: {
+      chainId: 8453,
+      url: 'https://mainnet.base.org',
+      accounts: [
+        DEPLOYER_PRIVATE_KEY,
+      ],
+      saveDeployments: true
     }
   },
   mocha: {
@@ -365,6 +381,14 @@ export default {
           browserURL: 'https://zkevm.polygonscan.com/',
         },
       },
+      {
+        network: "basetestnet",
+        chainId: 84531,
+        urls: {
+         apiURL: "https://api-goerli.basescan.org/api",
+         browserURL: "https://goerli.basescan.org"
+        }
+      }, 
       {
         network: "neonlabs",
         chainId: 245022934,
