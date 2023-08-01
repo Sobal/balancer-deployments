@@ -390,6 +390,14 @@ export default {
         }
       }, 
       {
+        network: "base",
+        chainId: 8453,
+        urls: {
+         apiURL: "https://api.basescan.org/api",
+         browserURL: "https://basescan.org"
+        }
+      }, 
+      {
         network: "neonlabs",
         chainId: 245022934,
         urls: {

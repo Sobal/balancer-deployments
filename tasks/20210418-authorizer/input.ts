@@ -46,6 +46,6 @@ export default {
     admin: '0xFA4a8650e7BEbB918859C280A86F9661BED29877'
   },
   base: {
-    admin: '0xFA4a8650e7BEbB918859C280A86F9661BED29877'
+    admin: '0xef0383EE4996fF0F886d1b88CAa6c37eC1E1bdEF'
   }
 };
