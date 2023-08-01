@@ -34,5 +34,14 @@
         "queryJoin(bytes32,address,address,(address[],uint256[],bytes,bool))": "0xe8c3b989d06024515531ff3703f021864167b70b06c592563f61fe13bf09160c"
       }
     }
+  },
+  "20220725-protocol-fee-percentages-provider": {
+    "ProtocolFeePercentagesProvider": {
+      "useAdaptor": false,
+      "actionIds": {
+        "registerFeeType(uint256,string,uint256,uint256)": "0x82c79cac637a586ea7a415a55a9c25bee2fa54df6dd9090b2f5c298df77b8f2a",
+        "setFeeTypePercentage(uint256,uint256)": "0x36c4e9f249995996e295f6ba12f5537392d7d8d465fcdf92e9b3443b21dd56cd"
+      }
+    }
   }
 }
