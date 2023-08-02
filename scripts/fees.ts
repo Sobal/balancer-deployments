@@ -30,10 +30,11 @@ async function main() {
     AUM = 3,
   }
 
-  
+  console.log('--');
   console.log('network name:', hre.network.name);
   console.log('fee provider address:', feeProvider.address);
   console.log('admin0', await authorizer.getRoleMember(await authorizer.DEFAULT_ADMIN_ROLE(), 0));
+  console.log('--');
   
   await authorizer
   .connect(admin)
@@ -58,10 +59,18 @@ async function main() {
   await feeProvider.connect(admin).setFeeTypePercentage(ProtocolFeeType.YIELD, BigNumber.from('500000000000000000'));
   await feeProvider.connect(admin).setFeeTypePercentage(ProtocolFeeType.AUM, BigNumber.from('500000000000000000'));
 
+  console.log('--');
+  console.log('swapfee on feesCollector', (await feesCollector.getSwapFeePercentage()).toString());
+  console.log('--');
   console.log('swap:', (await feeProvider.getFeeTypePercentage(ProtocolFeeType.SWAP)).toString());
   console.log('flashloan:', (await feeProvider.getFeeTypePercentage(ProtocolFeeType.FLASH_LOAN)).toString());
   console.log('yield:', (await feeProvider.getFeeTypePercentage(ProtocolFeeType.YIELD)).toString());
   console.log('aum:', (await feeProvider.getFeeTypePercentage(ProtocolFeeType.AUM)).toString());
+  console.log('--');
+
+
+
+
 }
 
 main().catch((error) => {
