@@ -50,6 +50,12 @@ export default {
   neonlabs: {
     InitialDeniedTokens: [],
   },
+  base: {
+    InitialDeniedTokens: [],
+  },
+  basetestnet: {
+    InitialDeniedTokens: [],
+  },
   localhost: {
     InitialDeniedTokens: [],
   },

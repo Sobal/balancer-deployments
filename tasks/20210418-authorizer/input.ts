@@ -41,5 +41,11 @@ export default {
   },
   devnet: {
     admin: '0xa16b39D51416c4496d71A8027ce01054F1484653',
+  },
+  basetestnet: {
+    admin: '0xFA4a8650e7BEbB918859C280A86F9661BED29877'
+  },
+  base: {
+    admin: '0xef0383EE4996fF0F886d1b88CAa6c37eC1E1bdEF'
   }
 };
